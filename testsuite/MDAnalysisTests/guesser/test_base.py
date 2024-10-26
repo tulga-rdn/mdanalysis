@@ -102,6 +102,14 @@ class TestBaseGuesser():
         assert_equal(u.atoms.types, ['', '', '', ''])
 
 
+def test_Universe_guess_bonds_deprecated():
+    with pytest.warns(
+        DeprecationWarning,
+        match='`guess_bonds` keyword is deprecated'
+    ):
+        u = mda.Universe(datafiles.PDB_full, guess_bonds=True)
+
+
 @pytest.mark.parametrize(
     "universe_input",
     [datafiles.DCD, datafiles.XTC, np.random.rand(3, 3), datafiles.PDB]
