@@ -286,6 +286,19 @@ def test_parallelizable_transformations():
     with pytest.raises(ValueError):
         FrameAnalysis(u.trajectory).run(backend='multiprocessing')
 
+
+def test_instance_serial_backend(u):
+    # test that isinstance is checked and the correct ValueError raise appears
+    msg = 'Can not display progressbar with non-serial backend'
+    with pytest.raises(ValueError, match=msg):
+        FrameAnalysis(u.trajectory).run(
+            backend=backends.BackendMultiprocessing(n_workers=2),
+            verbose=True,
+            progressbar_kwargs={"leave": True},
+            unsupported_backend=True
+        )
+
+
 def test_frame_bool_fail(client_FrameAnalysis):
     u = mda.Universe(TPR, XTC)  # dt = 100
     an = FrameAnalysis(u.trajectory)
