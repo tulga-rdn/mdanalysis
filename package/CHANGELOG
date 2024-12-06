@@ -14,13 +14,14 @@ The rules for this file:
 
 
 -------------------------------------------------------------------------------
-??/??/?? IAlibay
+??/??/?? IAlibay, ChiahsinChu
 
  * 2.9.0
 
 Fixes
 
 Enhancements
+  * Added `precision` for XYZWriter (Issue #4775, PR #4771)
 
 Changes
 
