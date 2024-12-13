@@ -14,11 +14,12 @@ The rules for this file:
 
 
 -------------------------------------------------------------------------------
-??/??/?? IAlibay, ChiahsinChu, RMeli
+??/??/?? IAlibay, ChiahsinChu, RMeli, tanishy7777
 
  * 2.9.0
 
 Fixes
+ * Fixes deprecation warning Array to scalar convertion. Replaced atan2() with np.arctan2() (Issue #4339)
 
 Enhancements
  * Add check and warning for empty (all zero) coordinates in RDKit converter (PR #4824)
