@@ -20,6 +20,8 @@ The rules for this file:
 
 Fixes
  * Fixes deprecation warning Array to scalar convertion. Replaced atan2() with np.arctan2() (Issue #4339)
+ * Replaced mutable defaults with None and initialized them within
+   the function to prevent shared state. (Issue #4655)
 
 Enhancements
  * Add check and warning for empty (all zero) coordinates in RDKit converter (PR #4824)
