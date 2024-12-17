@@ -15,6 +15,7 @@ from MDAnalysis.analysis.hydrogenbonds.hbond_analysis import (
     HydrogenBondAnalysis,
 )
 from MDAnalysis.analysis.nucleicacids import NucPairDist
+from MDAnalysis.analysis.contacts import Contacts
 from MDAnalysis.lib.util import is_installed
 
 
@@ -148,4 +149,11 @@ def client_HydrogenBondAnalysis(request):
 
 @pytest.fixture(scope="module", params=params_for_cls(NucPairDist))
 def client_NucPairDist(request):
+    return request.param
+
+
+# MDAnalysis.analysis.contacts
+
+@pytest.fixture(scope="module", params=params_for_cls(Contacts))
+def client_Contacts(request):
     return request.param
