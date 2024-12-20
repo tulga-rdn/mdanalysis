@@ -392,19 +392,7 @@ class EinsteinMSD(AnalysisBase):
         r""" Calculates the MSD via the FCA fast correlation algorithm.
 
         """
-        try:
-            import tidynamics
-        except ImportError:
-            raise ImportError("""ERROR --- tidynamics was not found!
-
-                tidynamics is required to compute an FFT based MSD (default)
-
-                try installing it using pip eg:
-
-                    pip install tidynamics
-
-                or set fft=False""")
-
+        import tidynamics
         positions = self._position_array.astype(np.float64)
         for n in tqdm(range(self.n_particles)):
             self.results.msds_by_particle[:, n] = tidynamics.msd(
