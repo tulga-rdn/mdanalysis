@@ -22,3 +22,4 @@ mdanalysis_sphinx_theme >=1.0.1
 sphinx_sitemap
 threadpoolctl
 tqdm
+tidynamics
